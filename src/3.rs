@@ -84,10 +84,10 @@ fn length_of_longest_substring_copied(s: String)->i32{
     let mut hm = HashMap::new();
         let mut start = 0;
         let mut res = 0;
-        
+
         for (idx, ch) in s.chars().enumerate() {
             start = start.max(hm.insert(ch, idx as i32).unwrap_or(-1) + 1);
-            res = res.max(idx as i32 - start + 1); 
+            res = res.max(idx as i32 - start + 1);
         }
         res
 }
