@@ -9,10 +9,7 @@ fn longest_consecutive(nums: Vec<i32>) -> i32 {
     }
 
     use std::collections::HashSet;
-    let mut map: HashSet<i32> = HashSet::new();
-    for num in &nums {
-        map.insert(*num);
-    }
+    let mut map: HashSet<i32> = nums.into_iter().collect();
     let mut count: i32 = 1;
     for num in map.iter() {
         if map.contains(&(num - 1)) {
