@@ -3,19 +3,41 @@ fn main() {
 }
 
 fn length_of_lis(nums: Vec<i32>) -> i32 {
-    let mut longest = 1;
-    let len = nums.len();
-    let mut memo: Vec<i32> = vec![1; len];
-    for i in 0..len {
-        for j in 0..i {
-            if nums[i] > nums[j] {
-                let x = memo[i].max(memo[j] + 1);
-                longest = longest.max(x);
-                memo[i] = x;
+    fn lower_bound(nums: &Vec<i32>, start: usize, cur: i32) -> usize {
+        let mut low = 0;
+        let mut high = start;
+
+        while low < high {
+            let mid = low + (high - low) / 2;
+
+            if cur <= nums[mid] {
+                high = mid;
+            } else {
+                low = mid + 1;
             }
         }
+
+        if low < start && nums[low] < cur {
+            low += 1;
+        }
+        return low;
     }
-    longest
+    let mut s: Vec<i32> = vec![];
+    for cur in nums.clone() {
+        let last = s.last();
+        if last.is_none() || last.unwrap() < &cur {
+            s.push(cur);
+            continue;
+        }
+        let last = *last.unwrap();
+
+        if last == cur {
+            continue;
+        }
+        let t = s.clone();
+        s[lower_bound(&t, t.len(), cur)] = cur;
+    }
+    s.len() as i32
 }
 
 #[cfg(test)]
