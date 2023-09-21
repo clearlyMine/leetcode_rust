@@ -5,20 +5,24 @@ fn main() {
     );
 }
 
-//takes too long
 fn longest_common_subsequence(text1: String, text2: String) -> i32 {
     let (len1, len2) = (text1.len(), text2.len());
-    let mut memo: Vec<Vec<i32>> = vec![vec![0; len2 + 1]; len1 + 1];
-    for i in 1..=len1 {
-        for j in 1..=len2 {
-            memo[i][j] = if text1.chars().nth(i - 1) == text2.chars().nth(j - 1) {
-                1 + memo[i - 1][j - 1]
-            } else {
-                memo[i - 1][j].max(memo[i][j - 1])
-            }
+    let (text1, text2, len2) = if len1 > len2 {
+        (text1, text2, len2)
+    } else {
+        (text2, text1, len1)
+    };
+    let mut memo: Vec<i32> = vec![0; len2 + 1];
+    for c in text1.chars() {
+        let mut pr = 0;
+        let mut prc;
+        for (j, d) in text2.chars().enumerate() {
+            prc = pr;
+            pr = memo[j + 1];
+            memo[j + 1] = if c == d { 1 + prc } else { pr.max(memo[j]) };
         }
     }
-    memo[len1][len2]
+    *memo.last().unwrap_or(&0)
 }
 
 #[cfg(test)]
