@@ -3,26 +3,19 @@ fn main() {
 }
 
 fn length_of_lis(nums: Vec<i32>) -> i32 {
-    fn recurse(nums: &Vec<i32>, i: usize, prev_i: i32, memo: &mut Vec<i32>) -> i32 {
-        if i >= nums.len() {
-            return 0;
+    let mut longest = 1;
+    let len = nums.len();
+    let mut memo: Vec<i32> = vec![1; len];
+    for i in 0..len {
+        for j in 0..i {
+            if nums[i] > nums[j] {
+                let x = memo[i].max(memo[j] + 1);
+                longest = longest.max(x);
+                memo[i] = x;
+            }
         }
-        let x = memo[(prev_i + 1) as usize];
-        if x != -1 {
-            return x;
-        }
-        let skip = recurse(nums, i + 1, prev_i, memo);
-        if prev_i == -1 || nums[i] > nums[prev_i as usize] {
-            let x = skip.max(1 + recurse(nums, i + 1, i as i32, memo));
-            memo[(prev_i + 1) as usize] = x;
-            return x;
-        } else {
-            memo[(prev_i + 1) as usize] = skip;
-            return skip;
-        };
     }
-    let mut memo: Vec<i32> = vec![-1; nums.len() + 1];
-    recurse(&nums, 0, -1, &mut memo)
+    longest
 }
 
 #[cfg(test)]
