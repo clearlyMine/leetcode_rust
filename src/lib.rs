@@ -1,3 +1,4 @@
 pub mod p0001_two_sum;
 pub mod p0003_longest_substring_without_repeatitions;
+pub mod p0128_longest_consecutive_sequence;
 pub mod q1143_longest_common_subsequence;
