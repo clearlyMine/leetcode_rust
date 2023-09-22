@@ -1,5 +1,5 @@
 [package]
-name = "leetcode-questions"
+name = "leetcode_problems"
 version = "0.1.0"
 edition = "2021"
 
