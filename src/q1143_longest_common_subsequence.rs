@@ -1,11 +1,4 @@
-fn main() {
-    println!(
-        "{}",
-        longest_common_subsequence("abcde".to_string(), "ace".to_string())
-    );
-}
-
-fn longest_common_subsequence(text1: String, text2: String) -> i32 {
+pub fn longest_common_subsequence(text1: String, text2: String) -> i32 {
     let (len1, len2) = (text1.len(), text2.len());
     let (text1, text2, len2) = if len1 > len2 {
         (text1, text2, len2)
