@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 fn is_anagram(s: String, t: String) -> bool {
     if s.len() != t.len() {
         return false;
@@ -29,6 +30,7 @@ fn is_anagram(s: String, t: String) -> bool {
     return true;
 }
 
+#[allow(dead_code)]
 fn is_anagram_2(s: String, t: String) -> bool {
     if s.len() != t.len() {
         return false;
@@ -56,6 +58,7 @@ fn is_anagram_2(s: String, t: String) -> bool {
     return true;
 }
 
+#[allow(dead_code)]
 fn is_anagram_copied(s: String, t: String) -> bool {
     let mut map = std::collections::HashMap::new();
     s.chars().for_each(|c| *map.entry(c).or_insert(0) += 1);

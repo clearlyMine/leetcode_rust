@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 fn length_of_lis(nums: Vec<i32>) -> i32 {
     nums.into_iter()
         .fold(Vec::new(), |mut s, n| {
