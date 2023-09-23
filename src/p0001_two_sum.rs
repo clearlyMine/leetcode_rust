@@ -9,11 +9,7 @@ pub fn two_sum(nums: &Vec<i32>, target: i32) -> Vec<i32> {
             }
         }
     }
-    print!(
-        "No solution for nums = {:?} and target = {:?}",
-        nums, target
-    );
-    return vec![0, 0];
+    vec![0, 0]
 }
 
 #[allow(dead_code)]
@@ -37,7 +33,7 @@ pub fn two_sum_with_hash_map(nums: &Vec<i32>, target: i32) -> Vec<i32> {
             None => continue,
         }
     }
-    return vec![0, 0];
+    vec![0, 0]
 }
 
 #[allow(dead_code)]
@@ -51,62 +47,55 @@ pub fn two_sum_copied(nums: &Vec<i32>, target: i32) -> Vec<i32> {
         };
     }
 
-    unreachable!(
-        "No solution for nums = {:?} and target = {:?}",
-        nums, target
-    );
+    // unreachable!(
+    //     "No solution for nums = {:?} and target = {:?}",
+    //     nums, target
+    // );
+    vec![0, 0]
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    use std::time::Instant;
 
     #[test]
     fn test_two_sum() {
         let mut nums: Vec<i32> = vec![2, 7, 11, 15];
         let mut target: i32 = 9;
-        let mut instant = Instant::now();
-        let mut result: Vec<i32> = two_sum(&nums, target);
-        let mut elapsed = instant.elapsed().as_nanos();
-        println!("{:?} in {:?}", result, elapsed);
-        instant = Instant::now();
-        result = two_sum_with_hash_map(&nums, target);
-        elapsed = instant.elapsed().as_nanos();
-        println!("{:?} in {:?}", result, elapsed);
-        instant = Instant::now();
-        result = two_sum_copied(&nums, target);
-        elapsed = instant.elapsed().as_nanos();
-        println!("{:?} in {:?}", result, elapsed);
+        let mut output: Vec<i32> = vec![1, 0];
+        assert!(contains_all(&two_sum(&nums, target), &output));
+        assert!(contains_all(&two_sum_with_hash_map(&nums, target), &output));
+        assert!(contains_all(&two_sum_copied(&nums, target), &output));
 
         nums = vec![3, 2, 4];
         target = 6;
-        instant = Instant::now();
-        result = two_sum(&nums, target);
-        elapsed = instant.elapsed().as_nanos();
-        println!("{:?} in {:?}", result, elapsed);
-        instant = Instant::now();
-        result = two_sum_with_hash_map(&nums, target);
-        elapsed = instant.elapsed().as_nanos();
-        println!("{:?} in {:?}", result, elapsed);
-        instant = Instant::now();
-        result = two_sum_copied(&nums, target);
-        elapsed = instant.elapsed().as_nanos();
-        println!("{:?} in {:?}", result, elapsed);
+        output = vec![1, 2];
+        assert!(contains_all(&two_sum(&nums, target), &output));
+        assert!(contains_all(&two_sum_with_hash_map(&nums, target), &output));
+        assert!(contains_all(&two_sum_copied(&nums, target), &output));
 
         nums = vec![3, 3];
         target = 6;
-        instant = Instant::now();
-        result = two_sum(&nums, target);
-        elapsed = instant.elapsed().as_nanos();
-        println!("{:?} in {:?}", result, elapsed);
-        instant = Instant::now();
-        result = two_sum_with_hash_map(&nums, target);
-        elapsed = instant.elapsed().as_nanos();
-        println!("{:?} in {:?}", result, elapsed);
-        instant = Instant::now();
-        result = two_sum_copied(&nums, target);
-        elapsed = instant.elapsed().as_nanos();
-        println!("{:?} in {:?}", result, elapsed);
+        output = vec![0, 1];
+        assert!(contains_all(&two_sum(&nums, target), &output));
+        assert!(contains_all(&two_sum_with_hash_map(&nums, target), &output));
+        assert!(contains_all(&two_sum_copied(&nums, target), &output));
+    }
+
+    fn contains_all(first: &Vec<i32>, second: &Vec<i32>) -> bool {
+        if first.len() != second.len() {
+            return false;
+        }
+        let (len, mut first, mut second) = (first.len(), first.clone(), second.clone());
+
+        first.sort();
+        second.sort();
+
+        for i in 0..len {
+            if first[i] != second[i] {
+                return false;
+            }
+        }
+        true
     }
 }
