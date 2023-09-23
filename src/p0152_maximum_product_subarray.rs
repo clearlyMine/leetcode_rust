@@ -1,6 +1,4 @@
-fn main() {}
-
-fn max_product(nums: Vec<i32>) -> i32 {
+pub fn max_product(nums: Vec<i32>) -> i32 {
     fn sub(nums: &[i32]) -> i32 {
         if nums.len() == 0 {
             return i32::MIN;
@@ -48,17 +46,4 @@ mod tests {
         result = max_product(input);
         assert_eq!(result, expected);
     }
-    // #[test]
-    // fn test_group_anagrams_empty_input() {
-    //     let input = vec![];
-    //     let expected = vec![vec![String::from("")]];
-    //     assert_eq!(group_anagrams(input), expected);
-    // }
-    //
-    // #[test]
-    // fn test_group_anagrams_single_input() {
-    //     let input = vec!["foo".to_string()];
-    //     let expected = vec![vec!["foo".to_string()]];
-    //     assert_eq!(group_anagrams(input), expected);
-    // }
 }
