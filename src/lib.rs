@@ -12,4 +12,5 @@ pub mod p0238_product_of_array_except_self;
 pub mod p0242_valid_anagram;
 pub mod p0300_longest_increasing_subsequence;
 pub mod p0347_top_k_frequent_elements;
+pub mod p0647_palindromic_substrings;
 pub mod q1143_longest_common_subsequence;

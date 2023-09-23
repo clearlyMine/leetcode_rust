@@ -1,8 +1,5 @@
-fn main() {
-    println!("{}", count_substrings("babad".to_string()));
-}
-
-fn count_substrings(s: String) -> i32 {
+#[allow(dead_code)]
+pub fn count_substrings(s: String) -> i32 {
     fn is_palindrome(p: &[char]) -> bool {
         let len = p.len();
         if len == 1 {
