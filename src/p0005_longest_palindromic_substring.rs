@@ -1,8 +1,5 @@
-fn main() {
-    println!("{}", longest_palindrome("babad".to_string()));
-}
-
-fn longest_palindrome(s: String) -> String {
+#[allow(dead_code)]
+pub fn longest_palindrome(s: String) -> String {
     fn is_palindrome(p: &[char]) -> bool {
         let len = p.len();
         if len == 1 {
