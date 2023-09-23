@@ -1,5 +1,5 @@
 pub mod p0001_two_sum;
-// pub mod p0002_add_two_numbers;
+pub mod p0002_add_two_numbers;
 pub mod p0003_longest_substring_without_repeatitions;
 pub mod p0005_longest_palindromic_substring;
 pub mod p0049_group_anagrams;
