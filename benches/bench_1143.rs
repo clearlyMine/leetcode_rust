@@ -1,5 +1,5 @@
 use criterion::{criterion_group, criterion_main, BenchmarkId, Criterion};
-use leetcode_problems::q1143_longest_common_subsequence::{
+use leetcode_problems::p1143_longest_common_subsequence::{
     longest_common_subsequence, longest_common_subsequence_basic,
     longest_common_subsequence_basic_2, longest_common_subsequence_my_dp,
 };
