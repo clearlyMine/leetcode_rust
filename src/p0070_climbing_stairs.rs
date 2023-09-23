@@ -1,7 +1,4 @@
-fn main() {
-    println!("{}", climb_stairs(7));
-}
-
+#[allow(dead_code)]
 fn climb_stairs(n: i32) -> i32 {
     fn fibonacci(upto: i32) -> i32 {
         if upto == 0 || upto == 1 {
@@ -18,4 +15,14 @@ fn climb_stairs(n: i32) -> i32 {
         l
     }
     fibonacci(n)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_climb_stairs() {
+        assert_eq!(climb_stairs(7), 21);
+    }
 }
