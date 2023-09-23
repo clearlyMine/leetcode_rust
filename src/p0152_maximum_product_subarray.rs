@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn max_product(nums: Vec<i32>) -> i32 {
     fn sub(nums: &[i32]) -> i32 {
         if nums.len() == 0 {

@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 fn rob(nums: Vec<i32>) -> i32 {
     let (mut a, mut b) = (0, 0);
 

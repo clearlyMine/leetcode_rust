@@ -1,5 +1,6 @@
 use std::collections::HashMap;
 
+#[allow(dead_code)]
 pub fn two_sum(nums: &Vec<i32>, target: i32) -> Vec<i32> {
     for i in 0..nums.len() {
         for j in i + 1..nums.len() {
@@ -15,6 +16,7 @@ pub fn two_sum(nums: &Vec<i32>, target: i32) -> Vec<i32> {
     return vec![0, 0];
 }
 
+#[allow(dead_code)]
 pub fn two_sum_with_hash_map(nums: &Vec<i32>, target: i32) -> Vec<i32> {
     let mut nums_map: HashMap<i32, Vec<usize>> = HashMap::new();
     for i in 0..nums.len() {
@@ -38,6 +40,7 @@ pub fn two_sum_with_hash_map(nums: &Vec<i32>, target: i32) -> Vec<i32> {
     return vec![0, 0];
 }
 
+#[allow(dead_code)]
 pub fn two_sum_copied(nums: &Vec<i32>, target: i32) -> Vec<i32> {
     let mut num_to_idx: HashMap<i32, i32> = HashMap::new();
 

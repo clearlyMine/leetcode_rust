@@ -1,5 +1,6 @@
 use std::collections::HashMap;
 
+#[allow(dead_code)]
 pub fn length_of_longest_substring(s: String) -> i32 {
     if s.len() < 2 {
         return s.len() as i32;
@@ -37,6 +38,7 @@ pub fn length_of_longest_substring(s: String) -> i32 {
 }
 
 // https://leetcode.com/problems/longest-substring-without-repeating-characters/solutions/2220293/rust-simple-idiomatic-solution/?orderBy=most_votes&languageTags=rust
+#[allow(dead_code)]
 pub fn length_of_longest_substring_copied(s: String) -> i32 {
     let mut hm = HashMap::new();
     let mut start = 0;
