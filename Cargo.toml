@@ -11,13 +11,17 @@ edition = "2021"
 criterion = { version = "0.5.1", features = ["html_reports"] }
 
 [[bench]]
-name = "bench_1143"
-harness = false
-
-[[bench]]
 name = "bench_0001"
 harness = false
 
 [[bench]]
 name = "bench_0036"
+harness = false
+
+[[bench]]
+name = "bench_0062"
+harness = false
+
+[[bench]]
+name = "bench_1143"
 harness = false

@@ -4,6 +4,7 @@ pub mod p0003_longest_substring_without_repeatitions;
 pub mod p0005_longest_palindromic_substring;
 pub mod p0036_valid_sudoku;
 pub mod p0049_group_anagrams;
+pub mod p0062_unique_paths;
 pub mod p0070_climbing_stairs;
 pub mod p0128_longest_consecutive_sequence;
 pub mod p0152_maximum_product_subarray;
