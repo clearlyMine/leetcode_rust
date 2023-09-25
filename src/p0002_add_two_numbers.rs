@@ -68,5 +68,65 @@ mod tests {
         }));
         let result: Option<Box<ListNode>> = add_two_numbers(l1, l2);
         assert_eq!(target, result);
+
+        let l1: Option<Box<ListNode>> = Some(Box::new(ListNode::new(0)));
+        let l2: Option<Box<ListNode>> = Some(Box::new(ListNode::new(0)));
+        let target: Option<Box<ListNode>> = Some(Box::new(ListNode::new(0)));
+        let result: Option<Box<ListNode>> = add_two_numbers(l1, l2);
+        assert_eq!(target, result);
+
+        let l1: Option<Box<ListNode>> = Some(Box::new(ListNode {
+            val: 9,
+            next: Some(Box::new(ListNode {
+                val: 9,
+                next: Some(Box::new(ListNode {
+                    val: 9,
+                    next: Some(Box::new(ListNode {
+                        val: 9,
+                        next: Some(Box::new(ListNode {
+                            val: 9,
+                            next: Some(Box::new(ListNode {
+                                val: 9,
+                                next: Some(Box::new(ListNode { val: 9, next: None })),
+                            })),
+                        })),
+                    })),
+                })),
+            })),
+        }));
+        let l2: Option<Box<ListNode>> = Some(Box::new(ListNode {
+            val: 9,
+            next: Some(Box::new(ListNode {
+                val: 9,
+                next: Some(Box::new(ListNode {
+                    val: 9,
+                    next: Some(Box::new(ListNode { val: 9, next: None })),
+                })),
+            })),
+        }));
+        let target: Option<Box<ListNode>> = Some(Box::new(ListNode {
+            val: 8,
+            next: Some(Box::new(ListNode {
+                val: 9,
+                next: Some(Box::new(ListNode {
+                    val: 9,
+                    next: Some(Box::new(ListNode {
+                        val: 9,
+                        next: Some(Box::new(ListNode {
+                            val: 0,
+                            next: Some(Box::new(ListNode {
+                                val: 0,
+                                next: Some(Box::new(ListNode {
+                                    val: 0,
+                                    next: Some(Box::new(ListNode { val: 1, next: None })),
+                                })),
+                            })),
+                        })),
+                    })),
+                })),
+            })),
+        }));
+        let result: Option<Box<ListNode>> = add_two_numbers(l1, l2);
+        assert_eq!(target, result);
     }
 }
