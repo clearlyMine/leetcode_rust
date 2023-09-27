@@ -7,6 +7,7 @@ pub mod p0049_group_anagrams;
 pub mod p0062_unique_paths;
 pub mod p0070_climbing_stairs;
 pub mod p0091_decode_ways;
+pub mod p0125_valid_palindrome;
 pub mod p0128_longest_consecutive_sequence;
 pub mod p0152_maximum_product_subarray;
 pub mod p0198_house_robber;
