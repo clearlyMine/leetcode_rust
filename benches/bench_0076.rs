@@ -1,5 +1,5 @@
 use criterion::{criterion_group, criterion_main, BenchmarkId, Criterion};
-use leetcode_problems::p0076_minimum_window_substring::{min_window_cur, min_window_fastest_yet};
+use leetcode_problems::p0076_minimum_window_substring::min_window_cur;
 
 // Define your benchmark function.
 fn benchmark_is_valid_sudoku(c: &mut Criterion) {
