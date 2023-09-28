@@ -13,6 +13,7 @@ pub mod p0076_minimum_window_substring;
 pub mod p0091_decode_ways;
 pub mod p0125_valid_palindrome;
 pub mod p0128_longest_consecutive_sequence;
+pub mod p0143_reorder_list;
 pub mod p0152_maximum_product_subarray;
 pub mod p0198_house_robber;
 pub mod p0206_reverse_linked_list;
