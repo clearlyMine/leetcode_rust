@@ -11,6 +11,7 @@ pub mod p0062_unique_paths;
 pub mod p0070_climbing_stairs;
 pub mod p0076_minimum_window_substring;
 pub mod p0091_decode_ways;
+pub mod p0104_maximum_depth_of_binary_tree;
 pub mod p0125_valid_palindrome;
 pub mod p0128_longest_consecutive_sequence;
 pub mod p0143_reorder_list;
