@@ -61,7 +61,7 @@ pub fn min_window_cur(s: String, t: String) -> String {
     }
 }
 
-//TLE
+//6ms 2.3MB ( 91.67%  75.00%)
 pub fn min_window_fastest_yet(s: String, t: String) -> String {
     let (l1, l2) = (s.len(), t.len());
     if l1 < l2 {
