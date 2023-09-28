@@ -14,6 +14,7 @@ pub mod p0125_valid_palindrome;
 pub mod p0128_longest_consecutive_sequence;
 pub mod p0152_maximum_product_subarray;
 pub mod p0198_house_robber;
+pub mod p0206_reverse_linked_list;
 pub mod p0213_house_robber_ii;
 pub mod p0217_contain_duplicates;
 pub mod p0238_product_of_array_except_self;
