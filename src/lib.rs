@@ -19,6 +19,7 @@ pub mod p0198_house_robber;
 pub mod p0206_reverse_linked_list;
 pub mod p0213_house_robber_ii;
 pub mod p0217_contain_duplicates;
+pub mod p0226_invert_binary_tree;
 pub mod p0238_product_of_array_except_self;
 pub mod p0242_valid_anagram;
 pub mod p0300_longest_increasing_subsequence;
