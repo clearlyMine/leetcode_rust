@@ -19,11 +19,10 @@ impl TreeNode {
 
 use std::cell::RefCell;
 use std::rc::Rc;
-// 0ms  2.58MB (100%  87.78%)
+// 1ms  2.74MB ( 81.23%  22.02%)
 pub fn max_depth_fastest(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    type TreeLink = Option<Rc<RefCell<TreeNode>>>;
     struct State {
-        tree: TreeLink,
+        tree: Option<Rc<RefCell<TreeNode>>>,
         depth: usize,
     }
     let mut stack: Vec<State> = vec![State {
@@ -36,17 +35,16 @@ pub fn max_depth_fastest(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         let depth = state.depth;
         if let Some(node) = n {
             max_depth = depth.max(max_depth);
-            let mut x = node.borrow_mut();
-            let y = &mut *x;
-            if y.left.is_some() {
+            let x = node.borrow();
+            if let Some(left) = &x.left {
                 stack.push(State {
-                    tree: y.left.clone(),
+                    tree: Some(left.clone()),
                     depth: depth + 1,
                 });
             }
-            if y.right.is_some() {
+            if let Some(right) = &x.right {
                 stack.push(State {
-                    tree: y.right.clone(),
+                    tree: Some(right.clone()),
                     depth: depth + 1,
                 });
             }
