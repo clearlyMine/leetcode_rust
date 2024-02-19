@@ -1,23 +1,14 @@
 #[allow(dead_code)]
 pub fn fizz_buzz(n: i32) -> Vec<String> {
-    let mut s: Vec<String> = vec!["".to_string(); n as usize];
-    for i in 1..=n as usize {
-        let index = i - 1;
-        if i % 3 == 0 {
-            s[index] = "Fizz".to_string();
-        }
-        if i % 5 == 0 {
-            if s[index] == "" {
-                s[index] = "Buzz".to_string();
-            } else {
-                s[index] += "Buzz";
-            }
-        }
-        if s[index] == "" {
-            s[index] = i.to_string();
-        }
-    }
-    s
+    (1..=n)
+        .into_iter()
+        .map(|i| match (i % 3 == 0, i % 5 == 0) {
+            (true, true) => "FizzBuzz".to_string(),
+            (true, false) => "Fizz".to_string(),
+            (false, true) => "Buzz".to_string(),
+            _ => i.to_string(),
+        })
+        .collect()
 }
 
 #[cfg(test)]
